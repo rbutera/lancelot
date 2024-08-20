@@ -1,0 +1,10 @@
+[Unit]
+Description=rclone sync
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rclone sync gdrive: /e/gdrive --log-file=/var/log/rclone-sync.log
+User=rai
+
+[Install]
+WantedBy=multi-user.target
